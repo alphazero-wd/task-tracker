@@ -1,0 +1,33 @@
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spinner {
+  margin: 10rem auto;
+  width: 100px;
+  height: 100px;
+  border: 3px solid rgba(13, 110, 253, 0.5);
+  border-top-color: #0d6efd;
+  animation: spinner 0.7s ease-in-out infinite;
+  border-radius: 50%;
+}
+.illustration-image {
+  width: 25%;
+}
+@media (max-width: 1024px) {
+  .illustration-image {
+    width: 50%;
+  }
+}
+.profile-img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 8px;
+  cursor: pointer;
+}
