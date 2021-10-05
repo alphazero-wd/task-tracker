@@ -1,8 +1,8 @@
 # MERN Stack To Do App
 
-# Website Demo Link:  https://mern-task-tracker.netlify.app
+- Website Demo Link:  https://mern-task-tracker.netlify.app
 
-# Backend API: https://task-tracker-app-project.herokuapp.com
+- Backend API: https://task-tracker-app-project.herokuapp.com
 
 # Project Image:
 
