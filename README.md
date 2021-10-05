@@ -10,7 +10,7 @@
 
 # About the Project: 
 + This is a CRUD To Do Application which was built using the MERN Stack (MongoDB, Express, React and NodeJS).
-+ User can: add a task, update a task name, mark a task as completed or important, delete the task, and view the date when a task was created.
++ User can: add a task, update a task name, mark a task as completed or important, delete the task, filter and sort tasks, and view the date when a task was created.
 + Most importantly, manual authentication with JSONWebToken and Google OAuth were integrated so that only the tasks that belong to a specific user are shown.
 + The website was deployed using Heroku for the server-side and Netlify for client-side.  
 
