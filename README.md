@@ -14,4 +14,4 @@
 + Most importantly, manual authentication with JSONWebToken and Google OAuth were integrated so that only the tasks that belong to a specific user are shown.
 + The website was deployed using Heroku for the server-side and Netlify for client-side.  
 
-# Hope you enjoy the project and give me some feedbacks on my work. I greatly appreciate that!
+- Hope you enjoy the project and give me some feedbacks on my work. I greatly appreciate that!
