@@ -30,12 +30,10 @@ const Auth = ({ alert, setAlert }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (!error) {
-      if (isSignUp) {
-        dispatch(signup(formValue));
-      } else {
-        dispatch(signin(formValue));
-      }
+    if (isSignUp) {
+      dispatch(signup(formValue));
+    } else {
+      dispatch(signin(formValue));
     }
   };
 
