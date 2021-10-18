@@ -5,7 +5,6 @@ import {
   Route,
   Switch,
   Redirect,
-  useLocation,
 } from 'react-router-dom';
 import Auth from './pages/Auth/Auth';
 import Navbar from './components/Header/Navbar';
@@ -21,26 +20,11 @@ const App = () => {
     sortValue: '1',
     taskValue: '',
   });
-  const [alert, setAlert] = useState({
-    message: '',
-    color: '',
-    isShown: false,
-  });
+
   const onChange = (e) => {
     setValue({ ...value, [e.target.name]: e.target.value });
   };
-  useEffect(() => {
-    const hideAlert = setTimeout(
-      () =>
-        setAlert({
-          message: '',
-          color: '',
-          isShown: false,
-        }),
-      3000
-    );
-    return () => clearTimeout(hideAlert);
-  }, [alert]);
+
   useEffect(() => {
     dispatch(queryTasks(value));
   }, [value, tasks, dispatch]);
@@ -54,13 +38,7 @@ const App = () => {
           exact
           render={() =>
             user ? (
-              <Home
-                onChange={onChange}
-                alert={alert}
-                value={value}
-                setValue={setValue}
-                setAlert={setAlert}
-              />
+              <Home onChange={onChange} value={value} setValue={setValue} />
             ) : (
               <Redirect to="/auth" />
             )
@@ -69,13 +47,7 @@ const App = () => {
         <Route
           path="/auth"
           exact
-          render={() =>
-            user ? (
-              <Redirect to="/" />
-            ) : (
-              <Auth alert={alert} setAlert={setAlert} />
-            )
-          }
+          render={() => (user ? <Redirect to="/" /> : <Auth />)}
         />
       </Switch>
     </Router>

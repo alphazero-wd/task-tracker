@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { createTask, updateTask, getTasks } from '../../reducers/tasks';
 
-const Home = ({ value, setValue, onChange, alert, setAlert }) => {
+const Home = ({ value, setValue, onChange }) => {
   const { loading, tasks, queriedTasks } = useSelector((state) => state.tasks);
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -17,7 +17,23 @@ const Home = ({ value, setValue, onChange, alert, setAlert }) => {
     isEdit: false,
     editId: '',
   });
-
+  const [alert, setAlert] = useState({
+    message: '',
+    color: '',
+    isShown: false,
+  });
+  useEffect(() => {
+    const hideAlert = setTimeout(
+      () =>
+        setAlert({
+          message: '',
+          color: '',
+          isShown: false,
+        }),
+      3000
+    );
+    return () => clearTimeout(hideAlert);
+  }, [alert]);
   const onSubmit = (e) => {
     e.preventDefault();
     if (!value.taskValue) {
